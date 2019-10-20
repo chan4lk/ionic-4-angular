@@ -5,7 +5,8 @@ const routes: Routes = [
   {
     path: '',
     loadChildren: () => import('./tabs/tabs.module').then(m => m.TabsPageModule)
-  }
+  },
+  { path: 'acivity-video', loadChildren: './acivity-video/acivity-video.module#AcivityVideoPageModule' }
 ];
 @NgModule({
   imports: [
