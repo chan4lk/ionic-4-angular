@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Activity } from './types';
-
+import { Activity } from './models/Activity';
 
 const API = 'https://orangevalleycaa.org/api/videos';
 

@@ -7,15 +7,15 @@
 </ion-header>
 
 <ion-content>
-  <ion-card>
-    
+  <ion-card [routerLink]="['activity-detail', activity.id]"  button *ngFor="let activity of activities$ | async"> 
     <ion-card-content>
       <ion-img
-        src="https://scontent.fcmb8-1.fna.fbcdn.net/v/t1.0-9/15085685_1155613914506746_1506024274247839593_n.jpg?_nc_cat=103&_nc_oc=AQk7C0C1sDSCvenuF9fG1GquDc6cLHSY4hTtUVRsf8vbFVaamhDAmZf6iuTkpKF8Nwg&_nc_ht=scontent.fcmb8-1.fna&oh=dba5dbdac98f15defe4f47413d4e09e9&oe=5E2196C6"
+        [src]="activity.cropped"
       ></ion-img>
     </ion-card-content>
     <ion-card-header>
-        <ion-card-title>Chandima's Activity</ion-card-title>
+        <ion-card-title color="primary">{{activity.name}}</ion-card-title>
       </ion-card-header>
   </ion-card>
+  
 </ion-content>
