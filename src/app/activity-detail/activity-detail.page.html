@@ -7,6 +7,33 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content *ngIf="activity$ | async as activity">
+  <ion-img [src]="activity.cropped"></ion-img>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>
+        {{ activity.name }}
+      </ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ activity.description }}
+    </ion-card-content>
+  </ion-card>
 
+  <ion-card>
+    <ion-list lines="none">
+      <ion-item>
+        <ion-label>Duration</ion-label>
+        <ion-chip color="primary">{{activity.duration}}</ion-chip>
+      </ion-item>
+      <ion-item>
+        <ion-label>Category</ion-label>
+        <ion-chip color="primary">{{activity.category}}</ion-chip>
+      </ion-item>
+      <ion-item>
+        <ion-label>Popularity</ion-label>
+        <ion-chip color="primary">{{activity.popularity}}</ion-chip>
+      </ion-item>
+    </ion-list>
+  </ion-card>
 </ion-content>
